@@ -2,7 +2,7 @@ import TeamMaxIcon from '../../assets/icons/temp-max.svg'
 import TeamMINIcon from '../../assets/icons/temp-min.svg'
 import HumidityIcon from '../../assets/icons/humidity.svg'
 import CloudIcon from '../../assets/icons/cloud.svg'
-import windIcon from '../../assets/icons/cloud.svg'
+import windIcon from '../../assets/icons/wind.svg'
 
 const WeatherCondition = () => {
     return (
