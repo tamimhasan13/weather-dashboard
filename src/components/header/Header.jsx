@@ -1,9 +1,11 @@
+import { useState } from "react";
 import Favourite from "./Favourite";
 import FavouriteListModal from "./FavouriteListModal";
 import Logo from "./Logo";
 import Search from "./Search";
 
 const Header = () => {
+  const [showModal,setShowModal]=useState(false)
   return (
     <>
       {/*  Start header */}
@@ -13,9 +15,9 @@ const Header = () => {
 
           <div className="flex items-center gap-4 relative">
             <Search></Search>
-            <Favourite></Favourite>
+            <Favourite onShowModal={() => setShowModal(!showModal)}></Favourite>
             {/*  Modal */}
-            <FavouriteListModal></FavouriteListModal>
+            {showModal && <FavouriteListModal></FavouriteListModal>}
           </div>
         </nav>
       </header>
