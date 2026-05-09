@@ -1,6 +1,4 @@
-import { useContext, useEffect, useState } from "react";
-import Header from "./components/header/Header";
-import WeatherBoard from "./components/weather/WeatherBoard";
+import { useContext } from "react";
 import ClearSkyImage from "./assets/backgrounds/clear-sky.jpg";
 import FewCloudsImage from "./assets/backgrounds/few-clouds.jpg";
 import MistImage from "./assets/backgrounds/mist.jpeg";
@@ -9,33 +7,35 @@ import ScatterdCloudsImage from "./assets/backgrounds/scattered-clouds.jpg";
 import SnowImage from "./assets/backgrounds/sunny.jpg";
 import ThunderStormImage from "./assets/backgrounds/thunderstorm.jpg";
 import WinterImage from "./assets/backgrounds/winter.jpg";
+import Header from "./components/header/Header";
+import WeatherBoard from "./components/weather/WeatherBoard";
 import { WeatherContext } from "./context";
 const Page = () => {
-    const {weatherData,loading}=useContext(WeatherContext);
-     function getBackgroundImage(climate) {
-       switch (climate) {
-         case "Rain":
-           return RainyDayImage;
-         case "Clouds":
-           return ScatterdCloudsImage;
-         case "Clear":
-           return ClearSkyImage;
-         case "Snow":
-           return SnowImage;
-         case "Thunder":
-           return ThunderStormImage;
-         case "Fog":
-           return WinterImage;
-         case "Haze":
-           return FewCloudsImage;
-         case "Mist":
-           return MistImage;
-         default:
-           return ClearSkyImage;
-       }
-     }
-   const climateImage = getBackgroundImage(weatherData.climate);
-    
+  const { weatherData, loading } = useContext(WeatherContext);
+  function getBackgroundImage(climate) {
+    switch (climate) {
+      case "Rain":
+        return RainyDayImage;
+      case "Clouds":
+        return ScatterdCloudsImage;
+      case "Clear":
+        return ClearSkyImage;
+      case "Snow":
+        return SnowImage;
+      case "Thunder":
+        return ThunderStormImage;
+      case "Fog":
+        return WinterImage;
+      case "Haze":
+        return FewCloudsImage;
+      case "Mist":
+        return MistImage;
+      default:
+        return ClearSkyImage;
+    }
+  }
+  const climateImage = getBackgroundImage(weatherData.climate);
+
   return (
     <>
       {loading.state ? (
