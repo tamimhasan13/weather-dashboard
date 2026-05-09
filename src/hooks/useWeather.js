@@ -60,11 +60,11 @@ const useWeather=()=>{
       }
     };
     useEffect(() => {
-      setLoading({
-        ...loading,
-        state: true,
-        message: "Finding Location..",
-      });
+      // setLoading({
+      //   ...loading,
+      //   state: true,
+      //   message: "Finding Location..",
+      // });
 
       navigator.geolocation.getCurrentPosition((position) => {
         fetchWeatherData(position.coords.longitude, position.coords.latitude);
