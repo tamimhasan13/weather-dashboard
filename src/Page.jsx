@@ -12,8 +12,6 @@ import WinterImage from "./assets/backgrounds/winter.jpg";
 import { WeatherContext } from "./context";
 const Page = () => {
     const {weatherData,loading}=useContext(WeatherContext);
-     const [climateImage, setClimateImage] = useState("");
-
      function getBackgroundImage(climate) {
        switch (climate) {
          case "Rain":
@@ -36,11 +34,8 @@ const Page = () => {
            return ClearSkyImage;
        }
      }
-
-     useEffect(() => {
-       const bgImage = getBackgroundImage(weatherData.climate);
-       setClimateImage(bgImage);
-     }, [weatherData.climate]);
+   const climateImage = getBackgroundImage(weatherData.climate);
+    
   return (
     <>
       {loading.state ? (
